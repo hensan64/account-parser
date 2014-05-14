@@ -1,73 +1,74 @@
 package accountparser;
 
-import static org.junit.Assert.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
 
-import java.util.*;
-
+import org.junit.Assert;
 import org.junit.Test;
-
-import accountparser.Data;
-import accountparser.Lib;
 
 public class LibTest {
 
     @Test
-    public void testIsBlank() {
-       assertTrue(Lib.isBlank(" \n"));
-       assertFalse(Lib.isBlank("abc\n"));
+    public final void testFormatMemo() {
+        Assert.assertEquals("Abc def ghi", Lib.formatMemo("Abc def ghi"));
+        Assert.assertEquals("Abc def ghi", Lib.formatMemo("Abc  def   ghi"));
+        Assert.assertEquals("Abc def ghi", Lib.formatMemo(",Abc,def,ghi,"));
+        Assert.assertEquals("Abc def ghi", Lib.formatMemo(", Abc,  def,   ghi    ,"));
     }
 
     @Test
-    public void testFormatMemo() {
-        assertEquals("Abc def ghi", Lib.formatMemo("Abc def ghi"));
-        assertEquals("Abc def ghi", Lib.formatMemo("Abc  def   ghi"));
-        assertEquals("Abc def ghi", Lib.formatMemo(",Abc,def,ghi,"));
-        assertEquals("Abc def ghi", Lib.formatMemo(", Abc,  def,   ghi    ,"));
-   }
-
-    @Test
-    public void testFormatValue() {
-        assertEquals("1234567.89", Lib.formatValue("1234567,89"));
-        assertEquals("1234567.89", Lib.formatValue("1 234 567,89"));
-        assertEquals("1234567.89", Lib.formatValue("1.234.567,89"));
+    public final void testFormatValue() {
+        Assert.assertEquals("1234567.89", Lib.formatValue("1234567,89"));
+        Assert.assertEquals("1234567.89", Lib.formatValue("1 234 567,89"));
+        Assert.assertEquals("1234567.89", Lib.formatValue("1.234.567,89"));
     }
 
     @Test
-    public void testPrintListData() {
-        List<String> stringList = new ArrayList<String>();
+    public final void testGetMatcherGroup() {
+        final String group = "group";
+        final String line = "string";
+        final String regexp = "^(?<group>.+)$";
+        final Matcher matcher = Regex.match(line, regexp);
+        matcher.matches();
+        Assert.assertEquals(line, Lib.getMatcherGroup(matcher, group));
+    }
+
+    @Test
+    public final void testIsBlank() {
+        Assert.assertTrue(Lib.isBlank(" \n"));
+        Assert.assertFalse(Lib.isBlank("abc\n"));
+    }
+
+    @Test
+    public final void testPrint() {
+        Assert.assertEquals("String 1", Lib.print("String 1"));
+    }
+
+    @Test
+    public final void testPrintListData() {
+        final List<String> stringList = new ArrayList<>();
         stringList.add("{year: 2013, month: 01, day: 12, prefix: SB, memo: Computer Store 1, type: debit, value: 1234567.98}");
         stringList.add("{year: 2014, month: 02, day: 13, prefix: CB, memo: Computer Store 2, type: credit, value: 9876543.21}");
-
-        Data data1 = new Data();        
-        data1.year   = "2013";
-        data1.month  = "01";
-        data1.day    = "12";
-        data1.prefix = "SB";
-        data1.memo   = "Computer Store 1";
-        data1.type   = "debit";
-        data1.value  = "1234567.98";
-
-        Data data2 = new Data();        
-        data2.year   = "2014";
-        data2.month  = "02";
-        data2.day    = "13";
-        data2.prefix = "CB";
-        data2.memo   = "Computer Store 2";
-        data2.type   = "credit";
-        data2.value  = "9876543.21";
-        
-        List<Data> dataList = new ArrayList<Data>();
+        final Data data1 = new Data.Builder().setYear("2013")
+                                             .setMonth("01")
+                                             .setDay("12")
+                                             .setPrefix("SB")
+                                             .setMemo("Computer Store 1")
+                                             .setType("debit")
+                                             .setValue("1234567.98")
+                                             .build();
+        final Data data2 = new Data.Builder().setYear("2014")
+                                             .setMonth("02")
+                                             .setDay("13")
+                                             .setPrefix("CB")
+                                             .setMemo("Computer Store 2")
+                                             .setType("credit")
+                                             .setValue("9876543.21")
+                                             .build();
+        final List<Data> dataList = new ArrayList<>();
         dataList.add(data1);
         dataList.add(data2);
-        
-        assertEquals(stringList, Lib.print(dataList));
+        Assert.assertEquals(stringList, Lib.print(dataList));
     }
-
-    @Test
-    public void testPrintObject() {
-        assertEquals("Object 1", Lib.print("Object 1"));
-        assertEquals("123", Lib.print(123));
-        assertEquals("12.3", Lib.print(12.3));
-    }
-
 }

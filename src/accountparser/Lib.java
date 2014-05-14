@@ -2,47 +2,71 @@ package accountparser;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
 
-class Lib {
-    static String formatMemo(String memo) {
+import org.eclipse.jdt.annotation.Nullable;
+
+final class Lib {
+
+    private Lib() {
+        instantiationNotAllowed();
+    }
+
+    static String formatMemo(final String memo) {
         // Replace commas with whitespace, to avoid separator (comma) conflicts
-        String memo1 = memo.replaceAll(",", " ");
+        final String memo1 = memo.replaceAll(",", " ");
         // Replace multiple whitespace with single whitespace, and trim the ends
-        String memo2 = memo1.replaceAll("\\s{2,}", " ").trim();
-        return memo2;
+        final String memo2 = memo1.replaceAll("\\s{2,}", " ").trim();
+        return (String) Lib.handleNull(memo2, "memo2");
     }
 
-    static String formatValue(String value) {
+    static String formatValue(final String value) {
         // Remove dots and whitespace from the value
-        String value1 = value.replaceAll("[.\\s]", "");
+        final String value1 = value.replaceAll("[.\\s]", "");
         // Replace decimal comma with decimal dot
-        String value2 = value1.replaceAll(",", ".").trim();
-        return value2;
+        final String value2 = value1.replaceAll(",", ".").trim();
+        return (String) Lib.handleNull(value2, "value2");
     }
 
-    static boolean isBlank(String line) {
-        Boolean reply;
-        if (line.trim().length() == 0)
-            reply = true;
-        else
-            reply = false;
-        return reply;
+    static String getMatcherGroup(final Matcher matcher, final String group) {
+        final String string = matcher.group(group);
+        return (String) Lib.handleNull(string, "string");
     }
 
-    static List<String> print(List<Data> dataList) {
-        List<String> dataStringList = new ArrayList<String>();
-        for (Data data : dataList) {
-            String dataString = data.print();
+    static Object handleNull(@Nullable final Object object, final String objectString) {
+        if (object == null) {
+            throw new RuntimeException("'" + objectString + "' is null");
+        }
+        return object;
+    }
+
+    static void instantiationNotAllowed() {
+        throw new RuntimeException("Instantiating not allowed");
+    }
+
+    static boolean isBlank(final String line) {
+        boolean result;
+        if (line.trim().length() == 0) {
+            result = true;
+        } else {
+            result = false;
+        }
+        return result;
+    }
+
+    static List<String> print(final List<Data> dataList) {
+        final List<String> dataStringList = new ArrayList<>();
+        for (final Data data : dataList) {
+            final String dataString = data.print();
             dataStringList.add(dataString);
         }
         // Return a list of strings for unit test purpose
         return dataStringList;
     }
 
-    static String print(Object object) {
-        String objectString = object.toString();
-        System.out.println(objectString);
+    static String print(final String string) {
+        System.out.println(string);
         // Return an object string for unit test purpose
-        return objectString;
+        return string;
     }
 }

@@ -8,14 +8,23 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-class File {
-    final static Charset ENCODING = StandardCharsets.ISO_8859_1;
+import org.eclipse.jdt.annotation.Nullable;
 
-    static List<String> read(String pathString) throws IOException {
-        return Files.readAllLines(Paths.get(pathString), ENCODING);
+final class File {
+
+    @Nullable static final Charset ENCODING = StandardCharsets.ISO_8859_1;
+
+    private File() {
+        Lib.instantiationNotAllowed();
     }
 
-    static Path write(String pathString, List<String> lines) throws IOException {
-        return Files.write(Paths.get(pathString), lines, ENCODING);
+    @Nullable
+    static List<String> read(final String pathString) throws IOException {
+        return Files.readAllLines(Paths.get(pathString), File.ENCODING);
+    }
+
+    @Nullable
+    static Path write(final String pathString, final List<String> lines) throws IOException {
+        return Files.write(Paths.get(pathString), lines, File.ENCODING);
     }
 }
