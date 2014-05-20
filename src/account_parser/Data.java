@@ -1,4 +1,4 @@
-package accountparser;
+package account_parser;
 
 class Data {
 

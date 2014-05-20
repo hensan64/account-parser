@@ -1,4 +1,4 @@
-package accountparser;
+package account_parser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,6 +6,10 @@ import java.util.regex.Matcher;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import account_parser.Data;
+import account_parser.Lib;
+import account_parser.Regex;
 
 public class LibTest {
 

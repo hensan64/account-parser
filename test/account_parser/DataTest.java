@@ -1,7 +1,9 @@
-package accountparser;
+package account_parser;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import account_parser.Data;
 
 public class DataTest {
 

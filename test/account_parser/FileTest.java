@@ -1,4 +1,4 @@
-package accountparser;
+package account_parser;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import account_parser.File;
 
 public class FileTest {
 

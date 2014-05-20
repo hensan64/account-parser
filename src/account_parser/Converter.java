@@ -1,4 +1,4 @@
-package accountparser;
+package account_parser;
 
 import java.io.IOException;
 import java.util.ArrayList;

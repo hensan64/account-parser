@@ -1,4 +1,4 @@
-package accountparser;
+package account_parser;
 
 import java.util.ArrayList;
 import java.util.List;
