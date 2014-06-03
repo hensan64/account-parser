@@ -7,10 +7,6 @@ import java.util.regex.Matcher;
 import org.junit.Assert;
 import org.junit.Test;
 
-import account_parser.Data;
-import account_parser.Lib;
-import account_parser.Regex;
-
 public class LibTest {
 
     @Test
@@ -54,21 +50,11 @@ public class LibTest {
         final List<String> stringList = new ArrayList<>();
         stringList.add("{year: 2013, month: 01, day: 12, prefix: SB, memo: Computer Store 1, type: debit, value: 1234567.98}");
         stringList.add("{year: 2014, month: 02, day: 13, prefix: CB, memo: Computer Store 2, type: credit, value: 9876543.21}");
-        final Data data1 = new Data.Builder().setYear("2013")
-                                             .setMonth("01")
-                                             .setDay("12")
-                                             .setPrefix("SB")
-                                             .setMemo("Computer Store 1")
-                                             .setType("debit")
-                                             .setValue("1234567.98")
+        final Data data1 = new Data.Builder().setYear("2013").setMonth("01").setDay("12").setPrefix("SB")
+                                             .setMemo("Computer Store 1").setType("debit").setValue("1234567.98")
                                              .build();
-        final Data data2 = new Data.Builder().setYear("2014")
-                                             .setMonth("02")
-                                             .setDay("13")
-                                             .setPrefix("CB")
-                                             .setMemo("Computer Store 2")
-                                             .setType("credit")
-                                             .setValue("9876543.21")
+        final Data data2 = new Data.Builder().setYear("2014").setMonth("02").setDay("13").setPrefix("CB")
+                                             .setMemo("Computer Store 2").setType("credit").setValue("9876543.21")
                                              .build();
         final List<Data> dataList = new ArrayList<>();
         dataList.add(data1);

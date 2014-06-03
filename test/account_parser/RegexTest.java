@@ -5,8 +5,6 @@ import java.util.regex.Matcher;
 import org.junit.Assert;
 import org.junit.Test;
 
-import account_parser.Regex;
-
 public class RegexTest {
 
     @Test

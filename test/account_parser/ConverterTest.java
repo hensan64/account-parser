@@ -6,11 +6,6 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
-import account_parser.Bank;
-import account_parser.Converter;
-import account_parser.File;
-import account_parser.Lib;
-
 public class ConverterTest {
 
     @Test
