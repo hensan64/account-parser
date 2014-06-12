@@ -17,7 +17,7 @@ final class Lib {
         final String memo1 = memo.replaceAll(",", " ");
         // Replace multiple whitespace with single whitespace, and trim the ends
         final String memo2 = memo1.replaceAll("\\s{2,}", " ").trim();
-        return (String) Lib.handleNull(memo2, "memo2");
+        return Lib.handleNull(memo2);
     }
 
     static String formatValue(final String value) {
@@ -25,19 +25,35 @@ final class Lib {
         final String value1 = value.replaceAll("[.\\s]", "");
         // Replace decimal comma with decimal dot
         final String value2 = value1.replaceAll(",", ".").trim();
-        return (String) Lib.handleNull(value2, "value2");
+        return Lib.handleNull(value2);
     }
 
     static String getMatcherGroup(final Matcher matcher, final String group) {
         final String string = matcher.group(group);
-        return (String) Lib.handleNull(string, "string");
+        return Lib.handleNull(string);
     }
 
-    static Object handleNull(@Nullable final Object object, final String objectString) {
-        if (object == null) {
-            throw new RuntimeException("'" + objectString + "' is null");
+    static List<String> handleNull(@Nullable final List<String> stringList) {
+        List<String> stringList1 = stringList;
+        if (stringList1 == null) {
+            stringList1 = new ArrayList<>();
         }
-        return object;
+        return stringList1;
+    }
+
+    static Matcher handleNull(@Nullable final Matcher matcher, final String variable) {
+        if (matcher == null) {
+            throw new RuntimeException("'" + variable + "' is null");
+        }
+        return matcher;
+    }
+
+    static String handleNull(@Nullable final String string) {
+        String string1 = string;
+        if (string1 == null) {
+            string1 = "";
+        }
+        return string1;
     }
 
     static void instantiationNotAllowed() {

@@ -12,7 +12,7 @@ final class Converter {
 
     static void execute(final Bank bank, final String inPath, final String outPath, final String prefix) throws IOException {
         final List<String> lines = File.read(inPath);
-        @SuppressWarnings("unchecked") final List<String> lines1 = (List<String>) Lib.handleNull(lines, "lines");
+        final List<String> lines1 = Lib.handleNull(lines);
         List<Data> dataList;
         if (bank.equals(Bank.CITIBANK)) {
             dataList = CitibankChrome.parse(lines1, prefix);

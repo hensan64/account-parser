@@ -13,7 +13,7 @@ public final class SkandiabankenChrome {
     public static List<Data> parse(final List<String> lines, final String prefix) {
         final List<Data> dataList = new ArrayList<>();
         for (final String line : lines) {
-            final String line1 = (String) Lib.handleNull(line, "line");
+            final String line1 = Lib.handleNull(line);
             if (Lib.isBlank(line1)) {
                 continue;
             }
