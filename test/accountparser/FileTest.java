@@ -17,9 +17,6 @@ public class FileTest {
         final String filePath = "test/files/FileWriteRead.txt";
         File.write(filePath, lines);
         final List<String> lines1 = File.read(filePath);
-        if (lines1 == null) {
-            throw new RuntimeException("'lines1' is null");
-        }
         Assert.assertEquals("Henrik Sandström", lines1.get(0));
         Assert.assertEquals("Ulrika Sandström", lines1.get(1));
     }
