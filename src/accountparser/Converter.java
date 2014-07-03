@@ -1,4 +1,4 @@
-package account_parser;
+package accountparser;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,34 +13,39 @@ final class Converter {
     static void execute(final Bank bank, final String inPath, final String outPath, final String prefix) throws IOException {
         final List<String> lines = File.read(inPath);
         final List<String> lines1 = Lib.handleNull(lines);
-        List<Data> dataList;
+        List<TransactionData> dataList;
+        final ParserData parserData;
         if (bank.equals(Bank.CITIBANK)) {
-            dataList = CitibankChrome.parse(lines1, prefix);
+            parserData = new ParserData.Builder().setHasInvertedSign(true)
+                                                 .setRegex(ParserData.CITIBANK_CHROME_REGEX)
+                                                 .build();
         } else if (bank.equals(Bank.SKANDIABANKEN)) {
-            dataList = SkandiabankenChrome.parse(lines1, prefix);
+            parserData = new ParserData.Builder().setHasInvertedSign(false)
+                                                 .setRegex(ParserData.SKANDIABANKEN_CHROME_REGEX)
+                                                 .build();
         } else {
-            throw (new Error("Unknown bank: " + bank.toString()));
+            throw new AccountParserException("Unknown bank: " + bank.toString());
         }
-        // Lib.print(dataList);
+        dataList = Parser.parse(lines1, prefix, parserData);
         Converter.write(dataList, outPath);
     }
 
-    private static void write(final List<Data> dataList, final String filePath) throws IOException {
+    private static void write(final List<TransactionData> dataList, final String filePath) throws IOException {
         final List<String> lines = new ArrayList<>();
         String valueString;
         lines.add("Date,Payee,Category,Memo,Outflow,Inflow");
-        for (final Data data : dataList) {
+        for (final TransactionData data : dataList) {
             final String type = data.getType();
-            if (type == "inflow") {
+            if ("inflow".equals(type)) {
                 valueString = "," + data.getValue();
-            } else if (type == "outflow") {
+            } else if ("outflow".equals(type)) {
                 valueString = data.getValue() + ",";
             } else {
-                throw (new Error("Wrong value type: Neither 'inflow' | 'outflow': " + type.toString()));
+                throw new AccountParserException("Wrong value type: Neither 'inflow' | 'outflow': " + type.toString());
             }
             // "Payee" field in YNAB not used
             lines.add(data.getYear() + "-" + data.getMonth() + "-" + data.getDay() + "," + "," + data.getPrefix() + ","
-                      + data.getMemo() + "," + valueString);
+                            + data.getMemo() + "," + valueString);
         }
         File.write(filePath, lines);
     }

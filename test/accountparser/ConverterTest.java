@@ -1,4 +1,4 @@
-package account_parser;
+package accountparser;
 
 import java.io.IOException;
 import java.util.List;
@@ -24,7 +24,7 @@ public class ConverterTest {
         final List<String> lines = File.read("test/files/OutSkandiabanken.csv");
         final List<String> lines1 = Lib.handleNull(lines);
         Assert.assertEquals("Date,Payee,Category,Memo,Outflow,Inflow", lines1.get(0));
-        Assert.assertEquals("2012-09-01,,SB,Kortköp CURA APOTEK SOLNA SOLNA,,2345678.90", lines1.get(1));
+        Assert.assertEquals("2012-09-01,,SB,KortkÃ¶p CURA APOTEK SOLNA SOLNA,,2345678.90", lines1.get(1));
         Assert.assertEquals("2012-08-31,,SB,Automatuttag 325675,8765432.10,", lines1.get(2));
     }
 }

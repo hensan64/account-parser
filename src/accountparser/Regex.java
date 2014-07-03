@@ -1,4 +1,4 @@
-package account_parser;
+package accountparser;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

@@ -1,4 +1,4 @@
-package account_parser;
+package accountparser;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,15 +12,15 @@ public class FileTest {
     @Test
     public final void testWriteRead() throws IOException {
         final List<String> lines = new ArrayList<>();
-        lines.add("Henrik Sandström");
-        lines.add("Ulrika Sandström");
+        lines.add("Henrik SandstrÃ¶m");
+        lines.add("Ulrika SandstrÃ¶m");
         final String filePath = "test/files/FileWriteRead.txt";
         File.write(filePath, lines);
         final List<String> lines1 = File.read(filePath);
         if (lines1 == null) {
             throw new RuntimeException("'lines1' is null");
         }
-        Assert.assertEquals("Henrik Sandström", lines1.get(0));
-        Assert.assertEquals("Ulrika Sandström", lines1.get(1));
+        Assert.assertEquals("Henrik SandstrÃ¶m", lines1.get(0));
+        Assert.assertEquals("Ulrika SandstrÃ¶m", lines1.get(1));
     }
 }

@@ -1,16 +1,23 @@
-package account_parser;
+package accountparser;
 
-class Data {
+class TransactionData {
 
-    private final String day;   // "12"
-    private final String memo;  // "Descriptive Text"
-    private final String month; // "06"
-    private final String prefix; // "SB"
-    private final String type;  // "inflow" | "outflow"
-    private final String value; // "1234.65"
-    private final String year;  // "2011"
+    // "12"
+    private final String day;
+    // "Descriptive Text"
+    private final String memo;
+    // "06"
+    private final String month;
+    // "SB"
+    private final String prefix;
+    // "inflow" | "outflow"
+    private final String type;
+    // "1234.65"
+    private final String value;
+    // "2011"
+    private final String year;
 
-    Data(final Builder builder) {
+    TransactionData(final Builder builder) {
         day = builder.getDay();
         memo = builder.getMemo();
         month = builder.getMonth();
@@ -18,6 +25,12 @@ class Data {
         type = builder.getType();
         value = builder.getValue();
         year = builder.getYear();
+    }
+
+    // For unit test purpose
+    String getDataString() {
+        return "{" + "year: " + year + ", " + "month: " + month + ", " + "day: " + day + ", " + "prefix: " + prefix
+               + ", " + "memo: " + memo + ", " + "type: " + type + ", " + "value: " + value + "}";
     }
 
     String getDay() {
@@ -48,26 +61,25 @@ class Data {
         return year;
     }
 
-    String print() {
-        final String dataString = "{" + "year: " + year + ", " + "month: " + month + ", " + "day: " + day + ", "
-                                  + "prefix: " + prefix + ", " + "memo: " + memo + ", " + "type: " + type + ", "
-                                  + "value: " + value + "}";
-        Lib.print(dataString); // The real purpose
-        return dataString; // Return a data string for unit test purpose
-    }
-
     static class Builder {
 
-        private String day    = ""; // "12"
-        private String memo   = ""; // "Descriptive Text"
-        private String month  = ""; // "06"
-        private String prefix = ""; // "SB"
-        private String type   = ""; // "inflow" | "outflow"
-        private String value  = ""; // "1234.65"
-        private String year   = ""; // "2011"
+        // "12"
+        private String day    = "";
+        // "Descriptive Text"
+        private String memo   = "";
+        // "06"
+        private String month  = "";
+        // "SB"
+        private String prefix = "";
+        // "inflow" | "outflow"
+        private String type   = "";
+        // "1234.65"
+        private String value  = "";
+        // "2011"
+        private String year   = "";
 
-        public Data build() {
-            return new Data(this);
+        public TransactionData build() {
+            return new TransactionData(this);
         }
 
         public String getDay() {

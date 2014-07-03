@@ -1,4 +1,4 @@
-package account_parser;
+package accountparser;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -12,7 +12,7 @@ import org.eclipse.jdt.annotation.Nullable;
 
 final class File {
 
-    @Nullable static final Charset ENCODING = StandardCharsets.ISO_8859_1;
+    @Nullable static final Charset ENCODING = StandardCharsets.UTF_8;
 
     private File() {
         Lib.instantiationNotAllowed();

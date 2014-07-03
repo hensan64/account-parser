@@ -1,5 +1,5 @@
 @NonNullByDefault
-package account_parser;
+package accountparser;
 
 import org.eclipse.jdt.annotation.NonNullByDefault;
 

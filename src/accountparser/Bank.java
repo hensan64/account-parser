@@ -1,4 +1,4 @@
-package account_parser;
+package accountparser;
 
 enum Bank {
     CITIBANK, SKANDIABANKEN

@@ -1,4 +1,4 @@
-package account_parser;
+package accountparser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +43,7 @@ final class Lib {
 
     static Matcher handleNull(@Nullable final Matcher matcher, final String variable) {
         if (matcher == null) {
-            throw new RuntimeException("'" + variable + "' is null");
+            throw new AccountParserException("'" + variable + "' is null");
         }
         return matcher;
     }
@@ -57,7 +57,7 @@ final class Lib {
     }
 
     static void instantiationNotAllowed() {
-        throw new RuntimeException("Instantiating not allowed");
+        throw new AccountParserException("Instantiating not allowed");
     }
 
     static boolean isBlank(final String line) {
@@ -70,19 +70,14 @@ final class Lib {
         return result;
     }
 
-    static List<String> print(final List<Data> dataList) {
+    static List<String> print(final List<TransactionData> dataList) {
         final List<String> dataStringList = new ArrayList<>();
-        for (final Data data : dataList) {
-            final String dataString = data.print();
+        for (final TransactionData data : dataList) {
+            final String dataString = data.getDataString();
             dataStringList.add(dataString);
         }
         // Return a list of strings for unit test purpose
         return dataStringList;
     }
 
-    static String print(final String string) {
-        System.out.println(string);
-        // Return an object string for unit test purpose
-        return string;
-    }
 }

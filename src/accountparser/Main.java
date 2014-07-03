@@ -1,4 +1,4 @@
-package account_parser;
+package accountparser;
 
 import java.io.IOException;
 
@@ -22,7 +22,7 @@ public final class Main {
             Converter.execute(Bank.SKANDIABANKEN, Main.IN_SKANDIABANKEN, Main.OUT_SKANDIABANKEN,
                               Main.PREFIX_SKANDIABANKEN);
         } else {
-            throw (new Error("Unknown bank argument: " + args[0]));
+            throw new AccountParserException("Unknown bank argument: " + args[0]);
         }
     }
 }

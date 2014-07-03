@@ -1,9 +1,11 @@
-package account_parser;
+package accountparser;
 
 import java.util.regex.Matcher;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import accountparser.Regex;
 
 public class RegexTest {
 
