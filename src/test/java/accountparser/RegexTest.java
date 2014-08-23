@@ -5,13 +5,11 @@ import java.util.regex.Matcher;
 import org.junit.Assert;
 import org.junit.Test;
 
-import accountparser.Regex;
-
 public class RegexTest {
 
     @Test
     public final void testMatch() {
-        final Matcher matcher = Regex.match("Henrik Sandström", "^Henrik\\sSandström$");
+        final Matcher matcher = Regex.match("Henrik Sandstrï¿½m", "^Henrik\\sSandstrï¿½m$");
         Assert.assertTrue(matcher.matches());
     }
 }
