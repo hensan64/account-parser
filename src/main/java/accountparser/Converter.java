@@ -45,7 +45,7 @@ final class Converter {
             }
             // "Payee" field in YNAB not used
             lines.add(data.getYear() + "-" + data.getMonth() + "-" + data.getDay() + "," + "," + data.getPrefix() + ","
-                            + data.getMemo() + "," + valueString);
+                      + data.getMemo() + "," + valueString);
         }
         File.write(filePath, lines);
     }

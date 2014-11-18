@@ -41,15 +41,15 @@ final class Parser {
                 throw new AccountParserException("Unknown sign: " + sign);
             }
             final TransactionData data = new TransactionData.Builder().setYear(Lib.getMatcherGroup(matcher, "year"))
-                            .setMonth(Lib.getMatcherGroup(matcher, "month"))
-                            .setDay(Lib.getMatcherGroup(matcher, "day"))
-                            .setPrefix(prefix)
-                            .setMemo(Lib.formatMemo(Lib.getMatcherGroup(matcher,
-                                                                        "memo")))
-                                                                        .setValue(Lib.formatValue(Lib.getMatcherGroup(matcher,
-                                                                                        "value")))
-                                                                                        .setType(type)
-                                                                                        .build();
+                                                                      .setMonth(Lib.getMatcherGroup(matcher, "month"))
+                                                                      .setDay(Lib.getMatcherGroup(matcher, "day"))
+                                                                      .setPrefix(prefix)
+                                                                      .setMemo(Lib.formatMemo(Lib.getMatcherGroup(matcher,
+                                                                                                                  "memo")))
+                                                                      .setValue(Lib.formatValue(Lib.getMatcherGroup(matcher,
+                                                                                                                    "value")))
+                                                                      .setType(type)
+                                                                      .build();
             dataList.add(data);
         }
         return dataList;
