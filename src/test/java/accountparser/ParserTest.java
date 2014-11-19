@@ -8,7 +8,7 @@ import org.junit.Test;
 
 public class ParserTest {
 
-    private static int FIRST = 0;
+    private static int FIRST  = 0;
     private static int SECOND = 1;
 
     @Test
@@ -42,26 +42,22 @@ public class ParserTest {
         checkDataList(referenceData1, referenceData2, dataList);
     }
 
+    private final void checkData(final TransactionData referenceData, final TransactionData data) {
+        Assert.assertEquals(referenceData.getYear(), data.getYear());
+        Assert.assertEquals(referenceData.getMonth(), data.getMonth());
+        Assert.assertEquals(referenceData.getDay(), data.getDay());
+        Assert.assertEquals(referenceData.getPrefix(), data.getPrefix());
+        Assert.assertEquals(referenceData.getMemo(), data.getMemo());
+        Assert.assertEquals(referenceData.getType(), data.getType());
+        Assert.assertEquals(referenceData.getValue(), data.getValue());
+    }
+
     private final void checkDataList(final TransactionData referenceData1, final TransactionData referenceData2,
                                      final List<TransactionData> dataList) {
         final TransactionData data1 = dataList.get(FIRST);
         final TransactionData data2 = dataList.get(SECOND);
-
-        Assert.assertEquals(referenceData1.getYear(), data1.getYear());
-        Assert.assertEquals(referenceData1.getMonth(), data1.getMonth());
-        Assert.assertEquals(referenceData1.getDay(), data1.getDay());
-        Assert.assertEquals(referenceData1.getPrefix(), data1.getPrefix());
-        Assert.assertEquals(referenceData1.getMemo(), data1.getMemo());
-        Assert.assertEquals(referenceData1.getType(), data1.getType());
-        Assert.assertEquals(referenceData1.getValue(), data1.getValue());
-
-        Assert.assertEquals(referenceData2.getYear(), data2.getYear());
-        Assert.assertEquals(referenceData2.getMonth(), data2.getMonth());
-        Assert.assertEquals(referenceData2.getDay(), data2.getDay());
-        Assert.assertEquals(referenceData2.getPrefix(), data2.getPrefix());
-        Assert.assertEquals(referenceData2.getMemo(), data2.getMemo());
-        Assert.assertEquals(referenceData2.getType(), data2.getType());
-        Assert.assertEquals(referenceData2.getValue(), data2.getValue());
+        checkData(referenceData1, data1);
+        checkData(referenceData2, data2);
     }
 
     private final ParserData getParserData(final boolean hasInvertedSign, final String regex) {
