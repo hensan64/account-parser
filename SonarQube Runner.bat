@@ -1,1 +1,1 @@
-"..\..\SonarQube Runner\2.4\bin\sonar-runner.bat"
+"C:\Program Files (x86)\SonarQube\SonarQube Runner\2.4\bin\sonar-runner.bat"
