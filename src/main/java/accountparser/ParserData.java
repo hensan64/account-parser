@@ -2,6 +2,8 @@ package accountparser;
 
 class ParserData {
 
+    // ".+?" means any one or more character in a non-greedy (?) way
+    // The regex consequently don't swallow the first 'tab'
     public static final String CITIBANK_CHROME_REGEX      = "^.+?\\t(?<day>\\d{2})\\/(?<month>\\d{2})\\/(?<year>\\d{4})(?:\\t.*?){2}\\t(?<memo>.+?)(?:\\t.*?){5}\\t(?<sign>-?)(?<value>.+?)$";
     public static final String SKANDIABANKEN_CHROME_REGEX = "^(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2})\\t(?<memo>.+?)\\t(?<sign>-?)(?<value>.+?)\\t.*$";
 
