@@ -12,6 +12,6 @@ final class Regex {
     static Matcher match(final String input, final String regex) {
         final Pattern pattern = Pattern.compile(regex);
         final Matcher matcher = pattern.matcher(input);
-        return Lib.handleNull(matcher, "matcher");
+        return Lib.handleNull(matcher);
     }
 }

@@ -12,6 +12,7 @@ public class LibTest {
     private static final String MEMO  = "Abc def ghi";
     private static final String VALUE = "1234567.89";
 
+    @SuppressWarnings("static-method")
     @Test
     public final void testFormatMemo() {
         Assert.assertEquals(MEMO, Lib.formatMemo("Abc def ghi"));
@@ -20,6 +21,7 @@ public class LibTest {
         Assert.assertEquals(MEMO, Lib.formatMemo(", Abc,  def,   ghi    ,"));
     }
 
+    @SuppressWarnings("static-method")
     @Test
     public final void testFormatValue() {
         Assert.assertEquals(VALUE, Lib.formatValue("1234567,89"));
@@ -27,6 +29,7 @@ public class LibTest {
         Assert.assertEquals(VALUE, Lib.formatValue("1.234.567,89"));
     }
 
+    @SuppressWarnings("static-method")
     @Test
     public final void testGetMatcherGroup() {
         final String group = "group";
@@ -37,12 +40,14 @@ public class LibTest {
         Assert.assertEquals(line, Lib.getMatcherGroup(matcher, group));
     }
 
+    @SuppressWarnings("static-method")
     @Test
     public final void testIsBlank() {
         Assert.assertTrue(Lib.isBlank(" \n"));
         Assert.assertFalse(Lib.isBlank("abc\n"));
     }
 
+    @SuppressWarnings("static-method")
     @Test
     public final void testPrintListData() {
         final List<String> stringList = new ArrayList<>();

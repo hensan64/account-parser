@@ -12,6 +12,7 @@ public class FileTest {
     private static final int FIRST  = 0;
     private static final int SECOND = 1;
 
+    @SuppressWarnings("static-method")
     @Test
     public final void testWriteRead() throws IOException {
         final List<String> lines = new ArrayList<>();

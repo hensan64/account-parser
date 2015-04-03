@@ -41,9 +41,9 @@ final class Lib {
         return stringList1;
     }
 
-    static Matcher handleNull(@Nullable final Matcher matcher, final String variable) {
+    static Matcher handleNull(@Nullable final Matcher matcher) {
         if (matcher == null) {
-            throw new AccountParserException("'" + variable + "' is null");
+            throw new AccountParserException("Variable of type Matcher is null");
         }
         return matcher;
     }
@@ -54,6 +54,13 @@ final class Lib {
             string1 = "";
         }
         return string1;
+    }
+
+    static TransactionData handleNull(@Nullable final TransactionData matcher) {
+        if (matcher == null) {
+            throw new AccountParserException("Variable of type TransactionData is null");
+        }
+        return matcher;
     }
 
     static void instantiationNotAllowed() {

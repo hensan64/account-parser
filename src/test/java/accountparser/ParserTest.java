@@ -11,6 +11,42 @@ public class ParserTest {
     private static int FIRST  = 0;
     private static int SECOND = 1;
 
+    private final static void checkData(final TransactionData referenceData, final TransactionData data) {
+        Assert.assertEquals(referenceData.getYear(), data.getYear());
+        Assert.assertEquals(referenceData.getMonth(), data.getMonth());
+        Assert.assertEquals(referenceData.getDay(), data.getDay());
+        Assert.assertEquals(referenceData.getPrefix(), data.getPrefix());
+        Assert.assertEquals(referenceData.getMemo(), data.getMemo());
+        Assert.assertEquals(referenceData.getType(), data.getType());
+        Assert.assertEquals(referenceData.getValue(), data.getValue());
+    }
+
+    private final static void checkDataList(final TransactionData referenceData1, final TransactionData referenceData2,
+                                            final List<TransactionData> dataList) {
+        final TransactionData data1 = dataList.get(FIRST);
+        final TransactionData data2 = dataList.get(SECOND);
+        checkData(referenceData1, Lib.handleNull(data1));
+        checkData(referenceData2, Lib.handleNull(data2));
+    }
+
+    private final static ParserData getParserData(final boolean hasInvertedSign, final String regex) {
+        return new ParserData.Builder().setHasInvertedSign(hasInvertedSign).setRegex(regex).build();
+    }
+
+    private final static TransactionData getTransactionData(final String year, final String month, final String day,
+                                                            final String prefix, final String memo, final String type,
+                                                            final String value) {
+        return new TransactionData.Builder().setYear(year)
+                                            .setMonth(month)
+                                            .setDay(day)
+                                            .setPrefix(prefix)
+                                            .setMemo(memo)
+                                            .setValue(value)
+                                            .setType(type)
+                                            .build();
+    }
+
+    @SuppressWarnings("static-method")
     @Test
     public final void testParseCitibankChrome() {
         final List<String> stringList = new ArrayList<>();
@@ -26,6 +62,7 @@ public class ParserTest {
         checkDataList(referenceData1, referenceData2, dataList);
     }
 
+    @SuppressWarnings("static-method")
     @Test
     public final void testParseSkandiabankenChrome() {
         final List<String> stringList = new ArrayList<>();
@@ -40,40 +77,5 @@ public class ParserTest {
         final TransactionData referenceData2 = getTransactionData("2012", "08", "31", prefix, "Automatuttag 325675",
                                                                   "outflow", "8765432.10");
         checkDataList(referenceData1, referenceData2, dataList);
-    }
-
-    private final void checkData(final TransactionData referenceData, final TransactionData data) {
-        Assert.assertEquals(referenceData.getYear(), data.getYear());
-        Assert.assertEquals(referenceData.getMonth(), data.getMonth());
-        Assert.assertEquals(referenceData.getDay(), data.getDay());
-        Assert.assertEquals(referenceData.getPrefix(), data.getPrefix());
-        Assert.assertEquals(referenceData.getMemo(), data.getMemo());
-        Assert.assertEquals(referenceData.getType(), data.getType());
-        Assert.assertEquals(referenceData.getValue(), data.getValue());
-    }
-
-    private final void checkDataList(final TransactionData referenceData1, final TransactionData referenceData2,
-                                     final List<TransactionData> dataList) {
-        final TransactionData data1 = dataList.get(FIRST);
-        final TransactionData data2 = dataList.get(SECOND);
-        checkData(referenceData1, data1);
-        checkData(referenceData2, data2);
-    }
-
-    private final ParserData getParserData(final boolean hasInvertedSign, final String regex) {
-        return new ParserData.Builder().setHasInvertedSign(hasInvertedSign).setRegex(regex).build();
-    }
-
-    private final TransactionData getTransactionData(final String year, final String month, final String day,
-                                                     final String prefix, final String memo, final String type,
-                                                     final String value) {
-        return new TransactionData.Builder().setYear(year)
-                                            .setMonth(month)
-                                            .setDay(day)
-                                            .setPrefix(prefix)
-                                            .setMemo(memo)
-                                            .setValue(value)
-                                            .setType(type)
-                                            .build();
     }
 }

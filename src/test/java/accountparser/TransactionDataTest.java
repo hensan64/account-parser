@@ -5,6 +5,7 @@ import org.junit.Test;
 
 public class TransactionDataTest {
 
+    @SuppressWarnings("static-method")
     @Test
     public final void testPrint() {
         final TransactionData data = new TransactionData.Builder().setYear("2013")
