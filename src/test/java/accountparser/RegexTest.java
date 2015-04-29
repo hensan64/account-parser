@@ -7,10 +7,10 @@ import org.junit.Test;
 
 public class RegexTest {
 
-    @SuppressWarnings("static-method")
-    @Test
-    public final void testMatch() {
-        final Matcher matcher = Regex.match("Henrik Sandstr�m", "^Henrik\\sSandstr�m$");
-        Assert.assertTrue(matcher.matches());
-    }
+  @SuppressWarnings("static-method")
+  @Test
+  public final void testMatch() {
+    final Matcher matcher = Regex.match("Henrik Sandström", "^Henrik\\sSandström$");
+    Assert.assertTrue(matcher.matches());
+  }
 }

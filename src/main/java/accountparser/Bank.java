@@ -1,5 +1,5 @@
 package accountparser;
 
 enum Bank {
-    CITIBANK, SKANDIABANKEN
+  CITIBANK, SKANDIABANKEN
 }
