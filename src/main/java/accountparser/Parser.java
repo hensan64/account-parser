@@ -20,7 +20,7 @@ final class Parser {
       }
       final String regex = parserData.getRegex();
       final Matcher matcher = Regex.match(line1, regex);
-      // Executes matching
+      // Executes matching (must not be removed)
       if (!matcher.matches()) {
         throw new AccountParserException("Line did not match regexp: " + line1);
       }
@@ -42,18 +42,18 @@ final class Parser {
         throw new AccountParserException("Unknown sign: " + sign);
       }
       final TransactionData data = new TransactionData.Builder().setYear(Lib.getMatcherGroup(matcher,
-                                                                                             "year"))
-                                                                .setMonth(Lib.getMatcherGroup(matcher,
-                                                                                              "month"))
-                                                                .setDay(Lib.getMatcherGroup(matcher,
-                                                                                            "day"))
-                                                                .setPrefix(prefix)
-                                                                .setMemo(Lib.formatMemo(Lib.getMatcherGroup(matcher,
-                                                                                                            "memo")))
-                                                                .setValue(Lib.formatValue(Lib.getMatcherGroup(matcher,
-                                                                                                              "value")))
-                                                                .setType(type)
-                                                                .build();
+              "year"))
+              .setMonth(Lib.getMatcherGroup(matcher,
+                      "month"))
+                      .setDay(Lib.getMatcherGroup(matcher,
+                              "day"))
+                              .setPrefix(prefix)
+                              .setMemo(Lib.formatMemo(Lib.getMatcherGroup(matcher,
+                                                                          "memo")))
+                                                                          .setValue(Lib.formatValue(Lib.getMatcherGroup(matcher,
+                                                                                  "value")))
+                                                                                  .setType(type)
+                                                                                  .build();
       dataList.add(data);
     }
     return dataList;
