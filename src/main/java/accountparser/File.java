@@ -17,15 +17,9 @@ final class File {
     Lib.instantiationNotAllowed();
   }
 
-  @Nullable
+  @SuppressWarnings("null")
   static List<String> read(final String pathString) throws IOException {
-    final List<String> result;
-    if (File.ENCODING == null) {
-      result = null;
-    } else {
-      result = Files.readAllLines(Paths.get(pathString), File.ENCODING);
-    }
-    return result;
+    return Files.readAllLines(Paths.get(pathString), File.ENCODING);
   }
 
   static void write(final String pathString, final List<String> lines) throws IOException {
