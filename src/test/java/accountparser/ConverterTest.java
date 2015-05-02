@@ -15,8 +15,7 @@ public class ConverterTest {
   @SuppressWarnings("static-method")
   @Test
   public final void testExecuteCitibank() throws IOException {
-    Converter.execute(Bank.CITIBANK, "src/test/resources/InCitibank.txt",
-                      "src/test/resources/OutCitibank.csv", "CB");
+    Converter.execute(Bank.CITIBANK, "src/test/resources/InCitibank.txt", "src/test/resources/OutCitibank.csv", "CB");
     final List<String> lines = File.read("src/test/resources/OutCitibank.csv");
     final List<String> lines1 = Lib.handleNull(lines);
     Assert.assertEquals("Date,Payee,Category,Memo,Outflow,Inflow", lines1.get(FIRST));
@@ -27,13 +26,11 @@ public class ConverterTest {
   @SuppressWarnings("static-method")
   @Test
   public final void testExecuteSkandiabanken() throws IOException {
-    Converter.execute(Bank.SKANDIABANKEN, "src/test/resources/InSkandiabanken.txt",
-                      "src/test/resources/OutSkandiabanken.csv", "SB");
+    Converter.execute(Bank.SKANDIABANKEN, "src/test/resources/InSkandiabanken.txt", "src/test/resources/OutSkandiabanken.csv", "SB");
     final List<String> lines = File.read("src/test/resources/OutSkandiabanken.csv");
     final List<String> lines1 = Lib.handleNull(lines);
     Assert.assertEquals("Date,Payee,Category,Memo,Outflow,Inflow", lines1.get(FIRST));
-    Assert.assertEquals("2012-09-01,,SB,Kortköp CURA APOTEK SOLNA SOLNA,,2345678.90",
-                        lines1.get(SECOND));
+    Assert.assertEquals("2012-09-01,,SB,Kortköp CURA APOTEK SOLNA SOLNA,,2345678.90", lines1.get(SECOND));
     Assert.assertEquals("2012-08-31,,SB,Automatuttag 325675,8765432.10,", lines1.get(THIRD));
   }
 }

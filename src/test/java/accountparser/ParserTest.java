@@ -11,8 +11,7 @@ public class ParserTest {
   private static int FIRST  = 0;
   private static int SECOND = 1;
 
-  private final static void checkData(final TransactionData referenceData,
-                                      final TransactionData data) {
+  private final static void checkData(final TransactionData referenceData, final TransactionData data) {
     Assert.assertEquals(referenceData.getYear(), data.getYear());
     Assert.assertEquals(referenceData.getMonth(), data.getMonth());
     Assert.assertEquals(referenceData.getDay(), data.getDay());
@@ -22,9 +21,7 @@ public class ParserTest {
     Assert.assertEquals(referenceData.getValue(), data.getValue());
   }
 
-  private final static void checkDataList(final TransactionData referenceData1,
-                                          final TransactionData referenceData2,
-                                          final List<TransactionData> dataList) {
+  private final static void checkDataList(final TransactionData referenceData1, final TransactionData referenceData2, final List<TransactionData> dataList) {
     final TransactionData data1 = dataList.get(FIRST);
     final TransactionData data2 = dataList.get(SECOND);
     checkData(referenceData1, Lib.handleNull(data1));
@@ -35,18 +32,9 @@ public class ParserTest {
     return new ParserData.Builder().setHasInvertedSign(hasInvertedSign).setRegex(regex).build();
   }
 
-  private final static TransactionData getTransactionData(final String year, final String month,
-                                                          final String day, final String prefix,
-                                                          final String memo, final String type,
-                                                          final String value) {
-    return new TransactionData.Builder().setYear(year)
-                                        .setMonth(month)
-                                        .setDay(day)
-                                        .setPrefix(prefix)
-                                        .setMemo(memo)
-                                        .setValue(value)
-                                        .setType(type)
-                                        .build();
+  private final static TransactionData getTransactionData(final String year, final String month, final String day, final String prefix, final String memo,
+                                                          final String type, final String value) {
+    return new TransactionData.Builder().setYear(year).setMonth(month).setDay(day).setPrefix(prefix).setMemo(memo).setValue(value).setType(type).build();
   }
 
   @SuppressWarnings("static-method")
@@ -58,12 +46,8 @@ public class ParserTest {
     final ParserData parserData = getParserData(true, ParserData.CITIBANK_CHROME_REGEX);
     final String prefix = "CB";
     final List<TransactionData> dataList = Parser.parse(stringList, prefix, parserData);
-    final TransactionData referenceData1 = getTransactionData("2013", "02", "27", prefix,
-                                                              "Payment Thank You", "inflow",
-                                                              "2345678.90");
-    final TransactionData referenceData2 = getTransactionData("2013", "02", "24", prefix,
-                                                              "Lingmerths RAMKVILLA SE", "outflow",
-                                                              "8765432.10");
+    final TransactionData referenceData1 = getTransactionData("2013", "02", "27", prefix, "Payment Thank You", "inflow", "2345678.90");
+    final TransactionData referenceData2 = getTransactionData("2013", "02", "24", prefix, "Lingmerths RAMKVILLA SE", "outflow", "8765432.10");
     checkDataList(referenceData1, referenceData2, dataList);
   }
 
@@ -76,12 +60,8 @@ public class ParserTest {
     final ParserData parserData = getParserData(false, ParserData.SKANDIABANKEN_CHROME_REGEX);
     final String prefix = "SB";
     final List<TransactionData> dataList = Parser.parse(stringList, prefix, parserData);
-    final TransactionData referenceData1 = getTransactionData("2012", "09", "01", prefix,
-                                                              "Kortköp CURA APOTEK SOLNA SOLNA",
-                                                              "inflow", "2345678.90");
-    final TransactionData referenceData2 = getTransactionData("2012", "08", "31", prefix,
-                                                              "Automatuttag 325675", "outflow",
-                                                              "8765432.10");
+    final TransactionData referenceData1 = getTransactionData("2012", "09", "01", prefix, "Kortköp CURA APOTEK SOLNA SOLNA", "inflow", "2345678.90");
+    final TransactionData referenceData2 = getTransactionData("2012", "08", "31", prefix, "Automatuttag 325675", "outflow", "8765432.10");
     checkDataList(referenceData1, referenceData2, dataList);
   }
 }

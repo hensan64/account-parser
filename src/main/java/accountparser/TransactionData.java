@@ -29,9 +29,8 @@ class TransactionData {
 
   // For unit test purpose
   String getDataString() {
-    return "{" + "year: " + year + ", " + "month: " + month + ", " + "day: " + day + ", "
-           + "prefix: " + prefix + ", " + "memo: " + memo + ", " + "type: " + type + ", "
-           + "value: " + value + "}";
+    return "{" + "year: " + year + ", " + "month: " + month + ", " + "day: " + day + ", " + "prefix: " + prefix + ", " + "memo: " + memo + ", " + "type: "
+           + type + ", " + "value: " + value + "}";
   }
 
   String getDay() {

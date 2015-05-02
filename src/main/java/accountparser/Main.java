@@ -19,8 +19,7 @@ public final class Main {
     if (args[0].equals(Bank.CITIBANK.name())) {
       Converter.execute(Bank.CITIBANK, Main.IN_CITIBANK, Main.OUT_CITIBANK, Main.PREFIX_CITIBANK);
     } else if (args[0].equals(Bank.SKANDIABANKEN.name())) {
-      Converter.execute(Bank.SKANDIABANKEN, Main.IN_SKANDIABANKEN, Main.OUT_SKANDIABANKEN,
-                        Main.PREFIX_SKANDIABANKEN);
+      Converter.execute(Bank.SKANDIABANKEN, Main.IN_SKANDIABANKEN, Main.OUT_SKANDIABANKEN, Main.PREFIX_SKANDIABANKEN);
     } else {
       throw new AccountParserException("Unknown bank argument: " + args[0]);
     }

@@ -10,8 +10,7 @@ final class Parser {
     Lib.instantiationNotAllowed();
   }
 
-  static List<TransactionData> parse(final List<String> lines, final String prefix,
-                                     final ParserData parserData) {
+  static List<TransactionData> parse(final List<String> lines, final String prefix, final ParserData parserData) {
     final List<TransactionData> dataList = new ArrayList<>();
     for (final String line : lines) {
       final String line1 = Lib.handleNull(line);
@@ -41,19 +40,14 @@ final class Parser {
       } else {
         throw new AccountParserException("Unknown sign: " + sign);
       }
-      final TransactionData data = new TransactionData.Builder().setYear(Lib.getMatcherGroup(matcher,
-              "year"))
-              .setMonth(Lib.getMatcherGroup(matcher,
-                      "month"))
-                      .setDay(Lib.getMatcherGroup(matcher,
-                              "day"))
-                              .setPrefix(prefix)
-                              .setMemo(Lib.formatMemo(Lib.getMatcherGroup(matcher,
-                                                                          "memo")))
-                                                                          .setValue(Lib.formatValue(Lib.getMatcherGroup(matcher,
-                                                                                  "value")))
-                                                                                  .setType(type)
-                                                                                  .build();
+      final TransactionData data = new TransactionData.Builder().setYear(Lib.getMatcherGroup(matcher, "year"))
+                                                                .setMonth(Lib.getMatcherGroup(matcher, "month"))
+                                                                .setDay(Lib.getMatcherGroup(matcher, "day"))
+                                                                .setPrefix(prefix)
+                                                                .setMemo(Lib.formatMemo(Lib.getMatcherGroup(matcher, "memo")))
+                                                                .setValue(Lib.formatValue(Lib.getMatcherGroup(matcher, "value")))
+                                                                .setType(type)
+                                                                .build();
       dataList.add(data);
     }
     return dataList;

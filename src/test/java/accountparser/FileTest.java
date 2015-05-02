@@ -21,9 +21,7 @@ public class FileTest {
     final String filePath = "src/test/resources/FileWriteRead.txt";
     File.write(filePath, lines);
     final List<String> lines1 = File.read(filePath);
-    if (lines1 != null) {
-      Assert.assertEquals("Henrik Sandström", lines1.get(FIRST));
-      Assert.assertEquals("Ulrika Sandström", lines1.get(SECOND));
-    }
+    Assert.assertEquals("Henrik Sandström", lines1.get(FIRST));
+    Assert.assertEquals("Ulrika Sandström", lines1.get(SECOND));
   }
 }
