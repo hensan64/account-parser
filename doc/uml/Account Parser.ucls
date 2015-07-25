@@ -1,126 +1,220 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class-diagram version="1.1.7" icons="true" automaticImage="PNG" always-add-relationships="true" generalizations="true" 
+<class-diagram version="1.1.8" icons="true" automaticImage="PNG" always-add-relationships="true" generalizations="true" 
   realizations="true" associations="true" dependencies="true" nesting-relationships="true">  
-  <class id="1" language="java" name="accountparser.ParserData" project="Account Parser" 
-    file="/Account Parser/src/main/java/accountparser/ParserData.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="207" width="809" x="267" y="580"/>    
+  <class id="1" language="java" name="accountparser.TransactionData" project="account-parser" 
+    file="/account-parser/src/main/java/accountparser/TransactionData.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="117" x="298" y="502"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="accountparser.TransactionData" project="Account Parser" 
-    file="/Account Parser/src/main/java/accountparser/TransactionData.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="351" width="146" x="81" y="580"/>    
+  <class id="2" language="java" name="accountparser.ParserData" project="account-parser" 
+    file="/account-parser/src/main/java/accountparser/ParserData.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="89" x="62" y="316"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="accountparser.Parser" project="Account Parser" 
-    file="/Account Parser/src/main/java/accountparser/Parser.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="318" x="41" y="441"/>    
+  <class id="3" language="java" name="accountparser.Parser" project="account-parser" 
+    file="/account-parser/src/main/java/accountparser/Parser.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="87" x="211" y="223"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="accountparser.Converter" project="Account Parser" 
-    file="/Account Parser/src/main/java/accountparser/Converter.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="117" width="221" x="401" y="284"/>    
+  <class id="4" language="java" name="accountparser.Main" project="account-parser" 
+    file="/account-parser/src/main/java/accountparser/Main.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="87" x="404" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="accountparser.TransactionData.Builder" project="Account Parser" 
-    file="/Account Parser/src/main/java/accountparser/TransactionData.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="477" width="142" x="41" y="971"/>    
+  <class id="5" language="java" name="accountparser.ParserData.Builder" project="account-parser" 
+    file="/account-parser/src/main/java/accountparser/ParserData.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="87" x="41" y="409"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="accountparser.Main" project="Account Parser" 
-    file="/Account Parser/src/main/java/accountparser/Main.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="207" width="329" x="401" y="37"/>    
+  <class id="6" language="java" name="accountparser.Regex" project="account-parser" 
+    file="/account-parser/src/main/java/accountparser/Regex.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="87" x="275" y="316"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="accountparser.ParserData.Builder" project="Account Parser" 
-    file="/Account Parser/src/main/java/accountparser/ParserData.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="207" width="202" x="895" y="971"/>    
+  <class id="7" language="java" name="accountparser.File" project="account-parser" 
+    file="/account-parser/src/main/java/accountparser/File.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="87" x="338" y="223"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <dependency id="8">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="1"/>  
+  <class id="8" language="java" name="accountparser.TransactionData.Builder" project="account-parser" 
+    file="/account-parser/src/main/java/accountparser/TransactionData.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="87" x="212" y="409"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="accountparser.Lib" project="account-parser" 
+    file="/account-parser/src/main/java/accountparser/Lib.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="87" x="383" y="409"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="accountparser.Converter" project="account-parser" 
+    file="/account-parser/src/main/java/accountparser/Converter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="87" x="338" y="130"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <dependency id="11">    
+    <bendpoint x="180" y="223"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="2"/>  
   </dependency>  
-  <dependency id="9">    
-    <bendpoint x="1106" y="441"/>    
-    <bendpoint x="1106" y="580"/>    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="7"/>  
-  </dependency>  
-  <dependency id="10">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="4"/>  
-  </dependency>  
-  <nesting id="11">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="7"/>  
-  </nesting>  
   <dependency id="12">    
-    <bendpoint x="410" y="441"/>    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="1"/>  
-  </dependency>  
-  <dependency id="13">    
     <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="2"/>  
   </dependency>  
-  <nesting id="14">    
+  <dependency id="13">    
+    <bendpoint x="181" y="316"/>    
+    <bendpoint x="181" y="409"/>    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="14">    
+    <bendpoint x="244" y="316"/>    
+    <bendpoint x="329" y="409"/>    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="15">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <dependency id="16">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <dependency id="17">    
+    <bendpoint x="31" y="223"/>    
+    <bendpoint x="31" y="316"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="18">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="19">    
+    <bendpoint x="455" y="223"/>    
+    <bendpoint x="455" y="316"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <dependency id="20">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="21">    
+    <bendpoint x="223" y="316"/>    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <dependency id="22">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="23">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="24">    
+    <bendpoint x="202" y="316"/>    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <dependency id="25">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <nesting id="26">    
     <end type="SOURCE" refId="2"/>    
     <end type="TARGET" refId="5"/>  
   </nesting>  
-  <dependency id="15">    
-    <bendpoint x="389" y="441"/>    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="2"/>  
+  <dependency id="27">    
+    <bendpoint x="413" y="316"/>    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="9"/>  
   </dependency>  
-  <dependency id="16">    
+  <dependency id="28">    
+    <bendpoint x="497" y="130"/>    
+    <bendpoint x="497" y="223"/>    
+    <bendpoint x="479" y="316"/>    
     <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="3"/>  
+    <end type="TARGET" refId="9"/>  
   </dependency>  
-  <dependency id="17">    
-    <end type="SOURCE" refId="7"/>    
+  <dependency id="29">    
+    <end type="SOURCE" refId="8"/>    
     <end type="TARGET" refId="1"/>  
   </dependency>  
-  <dependency id="18">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="2"/>  
+  <dependency id="30">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="7"/>  
   </dependency>  
-  <dependency id="19">    
-    <bendpoint x="50" y="580"/>    
+  <dependency id="31">    
+    <bendpoint x="434" y="316"/>    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <dependency id="32">    
+    <bendpoint x="392" y="316"/>    
     <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="5"/>  
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <dependency id="33">    
+    <bendpoint x="476" y="223"/>    
+    <bendpoint x="500" y="316"/>    
+    <bendpoint x="500" y="409"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <nesting id="34">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="8"/>  
+  </nesting>  
+  <dependency id="35">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="6"/>  
   </dependency>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
-    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
-    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+    <attributes public="false" package="false" protected="false" private="false" static="true"/>    
+    <operations public="false" package="false" protected="false" private="false" static="true"/>  
   </classifier-display>  
   <association-display labels="true" multiplicity="true"/>
 </class-diagram>
