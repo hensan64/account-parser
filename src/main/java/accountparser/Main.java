@@ -2,6 +2,7 @@ package accountparser;
 
 import java.io.IOException;
 
+@SuppressWarnings("javadoc")
 public final class Main {
 
   public static final String IN_CITIBANK          = "files/InCitibank.txt";

@@ -5,6 +5,7 @@ import java.util.regex.Matcher;
 import org.junit.Assert;
 import org.junit.Test;
 
+@SuppressWarnings("javadoc")
 public class RegexTest {
 
   @SuppressWarnings("static-method")

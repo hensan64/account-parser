@@ -1,5 +1,6 @@
 package accountparser;
 
+@SuppressWarnings("javadoc")
 public class AccountParserException extends RuntimeException {
 
   private static final long serialVersionUID = 1L;
