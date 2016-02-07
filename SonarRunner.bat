@@ -1,1 +1,0 @@
-"C:\Program Files (x86)\SonarSource\SonarRunner\2.4\bin\sonar-runner.bat"
